@@ -1,0 +1,49 @@
+import requests, smtplib
+import time 
+from bs4 import BeautifulSoup
+
+from twilio.rest import Client
+from twilio.base.exceptions import TwilioRestException
+
+
+mom = 'Holly'
+dad = 'Otis'
+available = False
+
+def puppy_alert():
+    """Send text when puppy is availble using Twilio API."""
+    account_sid = 'AC7d42449a5ca6890eb3e1f924ca4c0b6c'
+    auth_token = '1bb1f3d49e122ed36f2f6b59f03afe8a'
+    TWILIO_NUMBER = '+12058720099'
+
+
+    client = Client(account_sid, auth_token)
+    message = client.messages \
+                    .create(
+                            body='Puppy is availble! go to https://gailsdoodles.com/current-litters',
+                            from_=TWILIO_NUMBER,
+                            to='+16192895400'
+                     )
+    print(message.sid)
+
+while True: 
+
+    headings = []
+
+    get_page = requests.get('https://gailsdoodles.com/current-litters')
+
+    page_details = BeautifulSoup(get_page.text, 'html.parser')
+
+    for headlines in page_details.find_all("h1"):
+        headings.append(headlines.text.strip())
+
+    for h1 in headings:
+        if h1 == mom or h1 == dad: 
+            available = True 
+
+    if available == True:
+        puppy_alert()
+        break
+    else: 
+        time.sleep(3)
+
