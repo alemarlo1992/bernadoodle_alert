@@ -14,7 +14,6 @@ if __name__ == "__main__":
 
     checking_pup_thread = threading.Thread(target=checking_pup)
     checking_pup_thread.start()
-    print("After thread")
 
     app.run(host='0.0.0.0', port=port)
-    print('After app ran')
+
