@@ -16,5 +16,5 @@ if __name__ == "__main__":
     checking_pup_thread.start()
     print("After thread")
 
-    app.run(environ.get(host='0.0.0.0', port=port))
+    app.run(host='0.0.0.0', port=port)
     print('After app ran')
