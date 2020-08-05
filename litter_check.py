@@ -7,7 +7,6 @@ from twilio.rest import Client
 from twilio.base.exceptions import TwilioRestException
 import logging
 
-available = False
 
 def puppy_alert():
     """Send text when puppy is availble using Twilio API."""
@@ -27,27 +26,30 @@ def puppy_alert():
     print(message.sid)
 
     
+def checking_pup():
+    "Script that checks gailsdoodles.com for desired pup"
+    available = False
 
-while True: 
-    dad = environ["DAD"]
-    mom = environ["MOM"]
-    print(f"checking with DAD {dad} and Mom: {mom}")
-    headings = []
+    while True: 
+        dad = environ["DAD"]
+        mom = environ["MOM"]
+        print(f"checking with DAD {dad} and Mom: {mom}")
+        headings = []
 
-    get_page = requests.get('https://gailsdoodles.com/current-litters')
+        get_page = requests.get('https://gailsdoodles.com/current-litters')
 
-    page_details = BeautifulSoup(get_page.text, 'html.parser')
+        page_details = BeautifulSoup(get_page.text, 'html.parser')
 
-    for headlines in page_details.find_all("h1"):
-        headings.append(headlines.text.strip())
+        for headlines in page_details.find_all("h1"):
+            headings.append(headlines.text.strip())
 
-    for h1 in headings:
-        if h1 == mom or h1 == dad: 
-            available = True 
+        for h1 in headings:
+            if h1 == mom or h1 == dad: 
+                available = True 
 
-    if available == True:
-        print("puppy found")
-        # puppy_alert()
-        break
-    else: 
-        time.sleep(3)
+        if available == True:
+            print("puppy found")
+            # puppy_alert()
+            break
+        else: 
+            time.sleep(180)
