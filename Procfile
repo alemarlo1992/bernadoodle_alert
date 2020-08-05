@@ -1,1 +1,1 @@
-web: python litter_check.py
+web: python server.py
