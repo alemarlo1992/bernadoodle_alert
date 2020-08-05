@@ -53,4 +53,4 @@ def checking_pup():
             puppy_alert() #send text messege notification
             break
         else: 
-            time.sleep(2000)
+            time.sleep(380)
