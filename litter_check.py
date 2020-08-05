@@ -1,20 +1,21 @@
 import requests, smtplib
+from os import environ
 import time 
 from bs4 import BeautifulSoup
 
 from twilio.rest import Client
 from twilio.base.exceptions import TwilioRestException
+import logging
 
-
-mom = 'Holly'
+mom = 'Finley'
 dad = 'Otis'
 available = False
 
 def puppy_alert():
     """Send text when puppy is availble using Twilio API."""
-    account_sid = os.environ['TWILIO_ACCOUNT_SID']
-    auth_token = os.environ['TWILIO_AUTH_TOKEN']
-    
+    account_sid = environ['TWILIO_ACCOUNT_SID']
+    auth_token = environ['TWILIO_AUTH_TOKEN']
+
     TWILIO_NUMBER = '+12058720099'
 
 
@@ -27,8 +28,10 @@ def puppy_alert():
                      )
     print(message.sid)
 
-while True: 
+    
 
+while True: 
+    print("checking")
     headings = []
 
     get_page = requests.get('https://gailsdoodles.com/current-litters')
@@ -43,7 +46,8 @@ while True:
             available = True 
 
     if available == True:
-        puppy_alert()
+        print("puppy found")
+        # puppy_alert()
         break
     else: 
         time.sleep(3)
