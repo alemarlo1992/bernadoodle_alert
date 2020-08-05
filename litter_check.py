@@ -31,8 +31,8 @@ def checking_pup():
     available = False
 
     while True: 
-        dad = environ["DAD"]
-        mom = environ["MOM"]
+        dad = environ.get("DAD", "Finley")
+        mom = environ.get("MOM", "Riley")
         print(f"checking with DAD {dad} and Mom: {mom}")
         headings = []
 
