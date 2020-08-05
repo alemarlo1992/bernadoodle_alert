@@ -2,6 +2,7 @@ import requests, smtplib
 from os import environ
 import time 
 from bs4 import BeautifulSoup
+from datetime import datetime
 
 from twilio.rest import Client
 from twilio.base.exceptions import TwilioRestException
