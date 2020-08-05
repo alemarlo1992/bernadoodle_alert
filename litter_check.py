@@ -1,4 +1,4 @@
-import requests, smtplib
+import requests
 from os import environ
 import time 
 from bs4 import BeautifulSoup
