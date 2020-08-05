@@ -33,8 +33,7 @@ def checking_pup():
     while True: 
         dad = environ.get("DAD")
         mom = environ.get("MOM")
-        time = datetime.datetime
-        print(f"checking with DAD {dad} and Mom: {mom}, time: {time}")
+        print(f"checking with DAD {dad} and Mom: {mom}")
         headings = []
 
         get_page = requests.get('https://gailsdoodles.com/current-litters')
