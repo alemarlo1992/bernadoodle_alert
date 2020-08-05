@@ -15,19 +15,21 @@ def puppy_alert():
 
     TWILIO_NUMBER = '+12058720099'
 
+    phone_numbers = ['+16192895400', '+16193075064']
 
-    client = Client(account_sid, auth_token)
-    message = client.messages \
-                    .create(
-                            body='Puppy is availble! go to https://gailsdoodles.com/current-litters',
-                            from_=TWILIO_NUMBER,
-                            to='+16192895400'
-                     )
-    print(message.sid)
+    for phone in phone_numbers:
+        client = Client(account_sid, auth_token)
+        message = client.messages \
+                        .create(
+                                body='Puppy is availble! go to https://gailsdoodles.com/current-litters',
+                                from_=TWILIO_NUMBER,
+                                to=phone
+                         )
+        print(message.sid)
 
     
 def checking_pup():
-    "Script that checks gailsdoodles.com for desired pup"
+    """Script that checks gailsdoodles.com for desired pup"""
     available = False
 
     while True: 
@@ -48,7 +50,7 @@ def checking_pup():
                 available = True 
 
         if available == True:
-            puppy_alert()
+            puppy_alert() #send text messege notification
             break
         else: 
-            time.sleep(180)
+            time.sleep(2000)
