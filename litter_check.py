@@ -31,7 +31,9 @@ def puppy_alert():
     
 
 while True: 
-    print("checking")
+    dad = environ["DAD"]
+    mom = environ["MOM"]
+    print(f"checking with DAD {dad} and Mom: {mom}")
     headings = []
 
     get_page = requests.get('https://gailsdoodles.com/current-litters')
