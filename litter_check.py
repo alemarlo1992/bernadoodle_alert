@@ -7,8 +7,6 @@ from twilio.rest import Client
 from twilio.base.exceptions import TwilioRestException
 import logging
 
-mom = 'Finley'
-dad = 'Otis'
 available = False
 
 def puppy_alert():
