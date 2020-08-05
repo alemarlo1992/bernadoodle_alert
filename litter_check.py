@@ -52,4 +52,4 @@ def checking_pup():
             # puppy_alert()
             break
         else: 
-            time.sleep(180)
+            time.sleep(3)
