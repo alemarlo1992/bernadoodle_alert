@@ -29,7 +29,7 @@ def puppy_alert(phone):
 def checking_pup():
     """Script that checks gailsdoodles.com for desired pup"""
     available = False
-    phones = ['+16192895400', '+16193075064']
+    phones = ['+16192895400', '+16193075064', '+14084441501']
 
     while True: 
         dad = environ.get("DAD")
