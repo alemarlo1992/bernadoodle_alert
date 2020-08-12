@@ -16,7 +16,6 @@ def puppy_alert():
 
     TWILIO_NUMBER = '+12058720099'
 
-
     client = Client(account_sid, auth_token)
     message = client.messages \
                     .create(
@@ -30,7 +29,6 @@ def puppy_alert():
 def checking_pup():
     """Script that checks gailsdoodles.com for desired pup"""
     available = False
-
 
     while True: 
         dad = environ.get("DAD")
