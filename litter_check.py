@@ -15,23 +15,22 @@ def puppy_alert():
     auth_token = environ['TWILIO_AUTH_TOKEN']
 
     TWILIO_NUMBER = '+12058720099'
-    phones = ['+16192895400', '+16193075064', '+14084441501']
 
-    for phone in phones: 
-        client = Client(account_sid, auth_token)
-        message = client.messages \
-                        .create(
-                                body='Puppy is availble! go to https://gailsdoodles.com/current-litters',
-                                from_=TWILIO_NUMBER,
-                                to=phone
-                         )
-        print(message.sid)
+
+    client = Client(account_sid, auth_token)
+    message = client.messages \
+                    .create(
+                            body='Puppy is availble! go to https://gailsdoodles.com/current-litters',
+                            from_=TWILIO_NUMBER,
+                            to='+16192895400'
+                     )
+    print(message.sid)
 
     
 def checking_pup():
     """Script that checks gailsdoodles.com for desired pup"""
     available = False
-    phones = ['+16192895400', '+16193075064', '+14084441501']
+
 
     while True: 
         dad = environ.get("DAD")
