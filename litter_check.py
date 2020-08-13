@@ -47,7 +47,7 @@ def checking_pup():
         for h1 in headings:
             if h1 == mom or h1 == dad: 
                 available = True 
-        print("After headings")
+        print("After headings", available)
         if available == True:
             print("Puppy available")
             # puppy_alert() #send text messege notification
