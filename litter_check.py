@@ -28,6 +28,7 @@ def puppy_alert(phone):
     
 def checking_pup():
     """Script that checks gailsdoodles.com for desired pup"""
+    print("Starting pup check")
     available = False
 
     while True: 

@@ -8,6 +8,7 @@ app = Flask(__name__)
 port = int(environ.get('PORT', 5000))
 
 if __name__ == "__main__":
+    print("Starting server")
 
     checking_pup_thread = threading.Thread(target=checking_pup)
     checking_pup_thread.start()
