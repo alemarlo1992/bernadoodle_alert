@@ -42,13 +42,12 @@ def checking_pup():
         print("After get_details:")
         for headlines in page_details.find_all("h1"):
             headings.append(headlines.text.strip())
-            print("After headlines", headlines)
 
 
-        print("After headlines")
         for h1 in headings:
-            print("Each h1:", h1)
+            print("Each h1:", h1, mom, dad)
             if h1 == mom or h1 == dad: 
+                print("There was a match with heading:", h1)
                 available = True 
         print("After headings", available)
         if available == True:
