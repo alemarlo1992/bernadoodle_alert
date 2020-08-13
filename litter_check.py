@@ -37,20 +37,21 @@ def checking_pup():
         headings = []
 
         get_page = requests.get('https://gailsdoodles.com/current-litters')
-
+        print("After get_page")
         page_details = BeautifulSoup(get_page.text, 'html.parser')
-
+        print("After get_details")
         for headlines in page_details.find_all("h1"):
             headings.append(headlines.text.strip())
 
+        print("After headlines")
         for h1 in headings:
             if h1 == mom or h1 == dad: 
                 available = True 
-
+        print("After headings")
         if available == True:
             print("Puppy available")
             # puppy_alert() #send text messege notification
             break
         else: 
-            time.sleep(60) #sleep for 3 min 
+            time.sleep(10) #sleep for 3 min 
 
