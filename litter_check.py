@@ -31,8 +31,8 @@ def checking_pup():
     available = False
 
     while True: 
-        dad = environ.get("DAD")
-        mom = environ.get("MOM")
+        dad = environ.get("DAD", "Finley")
+        mom = environ.get("MOM", "Holly")
         print(f"checking with DAD {dad} and Mom: {mom}")
         headings = []
 
@@ -48,8 +48,9 @@ def checking_pup():
                 available = True 
 
         if available == True:
-            puppy_alert() #send text messege notification
+            print("Puppy available")
+            # puppy_alert() #send text messege notification
             break
         else: 
-            time.sleep(180) #sleep for 3 min 
+            time.sleep(60) #sleep for 3 min 
 
