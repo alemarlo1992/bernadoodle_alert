@@ -52,7 +52,7 @@ def checking_pup():
             for phone in phones: 
 
                 puppy_alert(phone) #send text messege notification
-            break
+        return 
         else: 
             time.sleep(180) #sleep for 3 min 
 
