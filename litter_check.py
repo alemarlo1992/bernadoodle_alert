@@ -50,6 +50,7 @@ def checking_pup():
 
         if available == True:
             for phone in phones: 
+                print("print phone:", phone)
 
                 puppy_alert(phone) #send text messege notification
             return 
