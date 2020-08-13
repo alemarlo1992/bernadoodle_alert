@@ -47,6 +47,7 @@ def checking_pup():
 
         print("After headlines")
         for h1 in headings:
+            print("Each h1:", h1)
             if h1 == mom or h1 == dad: 
                 available = True 
         print("After headings", available)
