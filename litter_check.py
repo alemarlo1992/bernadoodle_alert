@@ -45,7 +45,10 @@ def checking_pup():
 
 
         for h1 in headings:
-            print("Each h1:", h1, mom, dad)
+            print("Each h1:", h1, type(h1), len(h1))
+            print("Checking Mom:",mom, h1 == mom)
+            print("Checking Dad:",dad, h1 == dad)
+
             if h1 == mom or h1 == dad: 
                 print("There was a match with heading:", h1)
                 available = True 
