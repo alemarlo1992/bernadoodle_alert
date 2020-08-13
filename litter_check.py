@@ -39,9 +39,11 @@ def checking_pup():
         get_page = requests.get('https://gailsdoodles.com/current-litters')
         print("After get_page")
         page_details = BeautifulSoup(get_page.text, 'html.parser')
-        print("After get_details")
+        print("After get_details:")
         for headlines in page_details.find_all("h1"):
             headings.append(headlines.text.strip())
+            print("After headlines", headlines)
+
 
         print("After headlines")
         for h1 in headings:
