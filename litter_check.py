@@ -50,6 +50,7 @@ def checking_pup():
                 available = True 
 
         if available == True:
+            print("Dog available")
             for phone in phones: 
                 print("print phone:", phone)
 
