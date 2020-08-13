@@ -9,7 +9,7 @@ from twilio.base.exceptions import TwilioRestException
 import logging
 
 
-def puppy_alert():
+def puppy_alert(phone):
     """Send text when puppy is availble using Twilio API."""
     account_sid = environ['TWILIO_ACCOUNT_SID']
     auth_token = environ['TWILIO_AUTH_TOKEN']
@@ -21,7 +21,7 @@ def puppy_alert():
                     .create(
                             body='Puppy is availble! go to https://gailsdoodles.com/current-litters',
                             from_=TWILIO_NUMBER,
-                            to='+16192895400'
+                            to=phone
                      )
     print(message.sid)
 
@@ -35,6 +35,7 @@ def checking_pup():
         mom = environ.get("MOM")
         print(f"checking with DAD {dad} and Mom: {mom}")
         headings = []
+        phones = ['+16192895400', '+16193075064', '+14084441501']
 
         get_page = requests.get('https://gailsdoodles.com/current-litters')
 
@@ -48,7 +49,16 @@ def checking_pup():
                 available = True 
 
         if available == True:
-            puppy_alert() #send text messege notification
+            for phone in phones: 
+
+                puppy_alert(phone) #send text messege notification
             break
         else: 
             time.sleep(180) #sleep for 3 min 
+
+
+
+
+
+
+

@@ -1,9 +1,6 @@
 from litter_check import *
 from os import environ
 from flask import Flask
-# import schedule 
-# import time 
-# import logging
 import threading
 
 app = Flask(__name__)
