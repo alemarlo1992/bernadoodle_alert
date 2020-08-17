@@ -51,7 +51,7 @@ def checking_pup():
 
         if available == True:
             for phone in phones: 
-                puppy_alert(phone) #send text messege notification
+                # puppy_alert(phone) #send text messege notification
             break
         else: 
             time.sleep(180) #sleep for 3 min 
